@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../JAVA框架/FirstTest2022.4.4/FirstTest2022.4.4.iml" filepath="$PROJECT_DIR$/../../../JAVA框架/FirstTest2022.4.4/FirstTest2022.4.4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JAVA/code.iml" filepath="$PROJECT_DIR$/../JAVA/code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JAVA/code4.iml" filepath="$PROJECT_DIR$/../JAVA/code4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/news.iml" filepath="$PROJECT_DIR$/news.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../曹/news1/news1.iml" filepath="$PROJECT_DIR$/../曹/news1/news1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../news_1/news_1.iml" filepath="$PROJECT_DIR$/../news_1/news_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../test2/test2.iml" filepath="$PROJECT_DIR$/../test2/test2.iml" />
+    </modules>
+  </component>
+</project>

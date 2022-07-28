@@ -1,0 +1,83 @@
+@charset "UTF-8";
+* {
+ margin: 0;
+ padding: 0;
+}
+ul {
+ list-style: none;
+}
+.w {
+ width: 900px;
+ margin:0 auto;
+}
+.controls textarea {
+ width: 878px;
+ height: 100px;
+ resize: none;
+ border-radius: 10px;
+ outline:none;
+ padding-left: 20px;
+ padding-top:10px;
+ font-size: 18px;
+}
+.controls {
+ overflow: hidden;
+}
+
+.controls div {
+ float: right;
+}
+.controls div span {
+ color:#666;
+}
+.controls div .useCount {
+ color:red;
+}
+
+
+.contentList {
+ margin-top:50px;
+ position: relative;
+}
+.contentList li {
+ padding: 20px 0;
+ position: relative;
+ opacity: 0;
+ border-bottom: 1px dashed #ccc;
+}
+.contentList li .info {
+ position: relative;
+}
+.contentList li .info span {
+ position: absolute;
+ top:15px;
+ left:100px;
+ font:bold 16px '宋体';
+}
+.contentList li .info p {
+ position: absolute;
+ top:40px;
+ left: 100px;
+ color:#aaa;
+ font-size: 12px;
+}
+.contentList img {
+ width: 80px;
+ border-radius: 50%;
+}
+.contentList li .content {
+ padding-left: 100px;
+ color: #666;
+ word-break: break-all;
+}
+.contentList li button {
+ width: 50px;
+ height: 30px;
+ text-align: center;
+ border: 0;
+ outline: none;
+ cursor: pointer;
+ position: absolute;
+ right: 0;
+ bottom: 10px;
+}

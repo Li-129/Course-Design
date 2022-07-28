@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:jsp="http://java.sun.com/JSP/Page">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/css/layui.css" />
+    <script  src="layui/layui.js">
+    </script>
+    <script  src="js/jquery-3.6.0.min.js"> </script>
+</head>
+<body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+<script >
+    $(document).ready(function(){
+        $.ajax({
+            url:'ShowPic',
+            type:"get",
+            dataType:'json',
+            success:function(data){
+                $("#tabletest").find('tr').remove();
+                $("#tabletest").append('<tr>'+tr+'</tr>');//方法中传入的参数data为后台获取的数据
+                var url=window.location.href;  //获取当前页面的url
+                var len=url.length;   //获取url的长度值
+                var a=url.indexOf("?");   //获取第一次出现？的位置下标
+                var b=url.substr(a+1,len);   //截取问号之后的内容
+                for(i in data) //data指的是数组，i为数组的索引
+                {
+                    td='newsID='+data[i].newsID;
+                    if(td==b){
+                        var tr;
+                        var newsTitle='<td>'+data[i].news.newsTitle+'</td>';
+                        $("#tabletest").append('<tr>'+newsTitle+'</tr>');
+                        var newsContent='<td>'+data[i].news.newsContent+'</td>';
+                        $("#tabletest1").append('<tr>'+newsContent+'</tr>');
+                        var newsPicPath=data[i].newsPicPath;
+                        $("#tabletest2").append("<img  src="+newsPicPath+" width='800' height='400'>");
+                       // $("#image").append('<img  border="0" src="data[i].newsPicPath" width="312" height="400">')
+                    }
+                }
+            }
+        });
+    })
+
+
+</script>
+
+
+<script>
+    function comment() {
+        $.ajax({
+            url:'ShowPic',
+            type:"get",
+            dataType:'json',
+            success:function(data){
+                var url=window.location.href;  //获取当前页面的url
+                var len=url.length;   //获取url的长度值
+                var a=url.indexOf("=");   //获取第一次出现？的位置下标
+                var b=url.substr(a+1,len);   //截取问号之后的内容
+                window.location.href = 'http://localhost:8080/news_war_exploded/lookcomment?a='+b;
+            },
+            error:function(data){
+                alert("身份不正确");
+                window.location.href = 'http://localhost:8080/news_war_exploded/index2.jsp';
+            }
+        });
+    }
+</script>
+<fieldset class="layui-elem-field">
+
+    <div class="layui-row">
+        <div class="layui-col-xs10">
+            <div align="center" style="font-size: 32px;font-weight: bolder"  >
+                <!--    <table class="table table-bordered" id='tabletest' ></table>-->
+
+                <div class="layui-field-box">
+                    <table class="table table-bordered" id='tabletest' ></table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs2">
+            <div>
+                <a onclick="comment()"><button type="button"  class="layui-btn layui-btn-normal layui-btn-radius"><h2>评论</h2></button></a>
+
+                <a href="index2.jsp"><button type="button"  class="layui-btn layui-btn-normal layui-btn-radius">返回</button></a>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<div align="center" style="font-size: 32px;font-weight: bolder"  >
+<!--    <table class="table table-bordered" id='tabletest' ></table>-->
+</div>
+<div align="center">
+    <br/>
+    <table class="table table-bordered" id='tabletest1'width="800" bgcolor="#f0f8ff"></table>
+    <table class="table table-bordered" id='tabletest2'width="800" bgcolor="#faebd7"></table>
+</div>
+
+
+</body>
+</html>
